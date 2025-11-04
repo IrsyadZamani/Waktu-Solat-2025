@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waktu Solat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="islam.ico">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+</head>
+<h1>Waktu Solat 2025</h1>
+<div class="timezone-selector">
+    <label for="timezone">Pilih Zon Waktu:</label>
+    <select id="timezone" onchange="handleTimezoneChange()">
+        <option selected disabled>Pilih Zon...</option>
+        <optgroup label="Johor">
+            <option value="JHR01 - Pulau Aur dan Pulau Pemanggil">JHR01 - Pulau Aur dan Pulau Pemanggil</option>
+            <option value="JHR02 - Johor Bahru, Kota Tinggi, Mersing, Kulai">JHR02 - Johor Bahru, Kota Tinggi, Mersing, Kulai</option>
+            <option value="JHR03 - Kluang, Pontian">JHR03 - Kluang, Pontian</option>
+            <option value="JHR04 - Batu Pahat, Muar, Segamat, Gemas Johor, Tangkak">JHR04 - Batu Pahat, Muar, Segamat, Gemas Johor, Tangkak</option>
+        </optgroup>
+        <optgroup label="Kedah">
+            <option value="KDH01 - Kota Setar, Kubang Pasu, Pokok Sena (Daerah Kecil)">KDH01 - Kota Setar, Kubang Pasu, Pokok Sena (Daerah Kecil)</option>
+            <option value="KDH02 - Kuala Muda, Yan, Pendang">KDH02 - Kuala Muda, Yan, Pendang</option>
+            <option value="KDH03 - Padang Terap, Sik">KDH03 - Padang Terap, Sik</option>
+            <option value="KDH04 - Baling">KDH04 - Baling</option>
+            <option value="KDH05 - Bandar Baharu, Kulim">KDH05 - Bandar Baharu, Kulim</option>
+            <option value="KDH06 - Langkawi">KDH06 - Langkawi</option>
+            <option value="KDH07 - Puncak Gunung Jerai">KDH07 - Puncak Gunung Jerai</option>
+        </optgroup>
+        <optgroup label="Kelantan">
+            <option value="KTN01 - Bachok, Kota Bharu, Machang, Pasir Mas, Pasir Puteh, Tanah Merah, Tumpat, Kuala Krai, Mukim Chiku">KTN01 - Bachok, Kota Bharu, Machang, Pasir Mas, Pasir Puteh, Tanah Merah, Tumpat, Kuala Krai, Mukim Chiku</option>
+            <option value="KTN02 - Gua Musang (Daerah Galas Dan Bertam), Jeli, Jajahan Kecil Lojing">KTN02 - Gua Musang (Daerah Galas Dan Bertam), Jeli, Jajahan Kecil Lojing</option>
+        </optgroup>
+        <optgroup label="Melaka">
+            <option value="MLK01 - SELURUH NEGERI MELAKA">MLK01 - SELURUH NEGERI MELAKA</option>
+        </optgroup>
+        <optgroup label="Negeri Sembilan">
+            <option value="NGSN01 - Tampin, Jempol">NGSN01 - Tampin, Jempol</option>
+            <option value="NGSN02 - Jelebu, Kuala Pilah, Rembau">NGSN02 - Jelebu, Kuala Pilah, Rembau</option>
+            <option value="NGSN03 - Port Dickson, Seremban">NGSN03 - Port Dickson, Seremban</option>
+        </optgroup>
+        <optgroup label="Pahang">
+            <option value="PHG01 - Pulau Tioman">PHG01 - Pulau Tioman</option>
+            <option value="PHG02 - Kuantan, Pekan, Rompin, Muadzam Shah">PHG02 - Kuantan, Pekan, Rompin, Muadzam Shah</option>
+            <option value="PHG03 - Jerantut, Temerloh, Maran, Bera, Chenor, Jengka">PHG03 - Jerantut, Temerloh, Maran, Bera, Chenor, Jengka</option>
+            <option value="PHG04 - Bentong, Lipis, Raub">PHG04 - Bentong, Lipis, Raub</option>
+            <option value="PHG05 - Genting Sempah, Janda Baik, Bukit Tinggi">PHG05 - Genting Sempah, Janda Baik, Bukit Tinggi</option>
+            <option value="PHG06 - Cameron Highlands, Genting Higlands, Bukit Fraser">PHG06 - Cameron Highlands, Genting Higlands, Bukit Fraser</option>
+        </optgroup>
+        <optgroup label="Perak">
+            <option value="PRK01 - Tapah, Slim River, Tanjung Malim">PRK01 - Tapah, Slim River, Tanjung Malim</option>
+            <option value="PRK02 - Kuala Kangsar, Sg. Siput , Ipoh, Batu Gajah, Kampar">PRK02 - Kuala Kangsar, Sg. Siput , Ipoh, Batu Gajah, Kampar</option>
+            <option value="PRK03 - Lenggong, Pengkalan Hulu, Grik">PRK03 - Lenggong, Pengkalan Hulu, Grik</option>
+            <option value="PRK04 - Temengor, Belum">PRK04 - Temengor, Belum</option>
+            <option value="PRK05 - Kg Gajah, Teluk Intan, Bagan Datuk, Seri Iskandar, Beruas, Parit, Lumut, Sitiawan, Pulau Pangkor">PRK05 - Kg Gajah, Teluk Intan, Bagan Datuk, Seri Iskandar, Beruas, Parit, Lumut, Sitiawan, Pulau Pangkor</option>
+            <option value="PRK06 - Selama, Taiping, Bagan Serai, Parit Buntar">PRK06 - Selama, Taiping, Bagan Serai, Parit Buntar</option>
+            <option value="PRK07 - Bukit Larut">PRK07 - Bukit Larut</option>
+        </optgroup>
+        <optgroup label="Perlis">
+            <option value="PLS01 - Kangar, Padang Besar, Arau">PLS01 - Kangar, Padang Besar, Arau</option>
+        </optgroup>
+        <optgroup label="Pulau Pinang">
+            <option value="PNG01 - Seluruh Negeri Pulau Pinang">PNG01 - Seluruh Negeri Pulau Pinang</option>
+        </optgroup>
+        <optgroup label="Sabah">
+            <option value="SBH01 - Bahagian Sandakan (Timur), Bukit Garam, Semawang, Temanggong, Tambisan, Bandar Sandakan, Sukau">SBH01 - Bahagian Sandakan (Timur), Bukit Garam, Semawang, Temanggong, Tambisan, Bandar Sandakan, Sukau</option>
+            <option value="SBH02 - Beluran, Telupid, Pinangah, Terusan, Kuamut, Bahagian Sandakan (Barat)">SBH02 - Beluran, Telupid, Pinangah, Terusan, Kuamut, Bahagian Sandakan (Barat)</option>
+            <option value="SBH03 - Lahad Datu, Silabukan, Kunak, Sahabat, Semporna, Tungku, Bahagian Tawau (Timur)">SBH03 - Lahad Datu, Silabukan, Kunak, Sahabat, Semporna, Tungku, Bahagian Tawau (Timur)</option>
+            <option value="SBH04 - Bandar Tawau, Balong, Merotai, Kalabakan, Bahagian Tawau (Barat)">SBH04 - Bandar Tawau, Balong, Merotai, Kalabakan, Bahagian Tawau (Barat)</option>
+            <option value="SBH05 - Kudat, Kota Marudu, Pitas, Pulau Banggi, Bahagian Kudat">SBH05 - Kudat, Kota Marudu, Pitas, Pulau Banggi, Bahagian Kudat</option>
+            <option value="SBH06 - Gunung Kinabalu">SBH06 - Gunung Kinabalu</option>
+            <option value="SBH07 - Kota Kinabalu, Ranau, Kota Belud, Tuaran, Penampang, Papar, Putatan, Bahagian Pantai Barat">SBH07 - Kota Kinabalu, Ranau, Kota Belud, Tuaran, Penampang, Papar, Putatan, Bahagian Pantai Barat</option>
+            <option value="SBH08 - Pensiangan, Keningau, Tambunan, Nabawan, Bahagian Pendalaman (Atas)">SBH08 - Pensiangan, Keningau, Tambunan, Nabawan, Bahagian Pendalaman (Atas)</option>
+            <option value="SBH09 - Beaufort, Kuala Penyu, Sipitang, Tenom, Long Pasia, Membakut, Weston, Bahagian Pendalaman (Bawah)">SBH09 - Beaufort, Kuala Penyu, Sipitang, Tenom, Long Pasia, Membakut, Weston, Bahagian Pendalaman (Bawah)</option>
+        </optgroup>
+        <optgroup label="Sarawak">
+            <option value="SWK01 - Limbang, Lawas, Sundar, Trusan">SWK01 - Limbang, Lawas, Sundar, Trusan</option>
+            <option value="SWK02 - Miri, Niah, Bekenu, Sibuti, Marudi">SWK02 - Miri, Niah, Bekenu, Sibuti, Marudi</option>
+            <option value="SWK03 - Pandan, Belaga, Suai, Tatau, Sebauh, Bintulu">SWK03 - Pandan, Belaga, Suai, Tatau, Sebauh, Bintulu</option>
+            <option value="SWK04 - Sibu, Mukah, Dalat, Song, Igan, Oya, Balingian, Kanowit, Kapit">SWK04 - Sibu, Mukah, Dalat, Song, Igan, Oya, Balingian, Kanowit, Kapit</option>
+            <option value="SWK05 - Sarikei, Matu, Julau, Rajang, Daro, Bintangor, Belawai">SWK05 - Sarikei, Matu, Julau, Rajang, Daro, Bintangor, Belawai</option>
+            <option value="SWK06 - Lubok Antu, Sri Aman, Roban, Debak, Kabong, Lingga, Engkelili, Betong, Spaoh, Pusa, Saratok">SWK06 - Lubok Antu, Sri Aman, Roban, Debak, Kabong, Lingga, Engkelili, Betong, Spaoh, Pusa, Saratok</option>
+            <option value="SWK07 - Serian, Simunjan, Samarahan, Sebuyau, Meludam">SWK07 - Serian, Simunjan, Samarahan, Sebuyau, Meludam</option>
+            <option value="SWK08 - Kuching, Bau, Lundu, Sematan">SWK08 - Kuching, Bau, Lundu, Sematan</option>
+            <option value="SWK09 - Zon Khas (Kampung Patarikan)">SWK09 - Zon Khas (Kampung Patarikan)</option>
+        </optgroup>
+        <optgroup label="Selangor">
+            <option value="SGR01 - Gombak, Petaling, Sepang, Hulu Langat, Hulu Selangor, S.Alam">SGR01 - Gombak, Petaling, Sepang, Hulu Langat, Hulu Selangor, S.Alam</option>
+            <option value="SGR02 - Kuala Selangor, Sabak Bernam">SGR02 - Kuala Selangor, Sabak Bernam</option>
+            <option value="SGR03 - Klang, Kuala Langat">SGR03 - Klang, Kuala Langat</option>
+        </optgroup>
+        <optgroup label="Terengganu">
+            <option value="TRG01 - Kuala Terengganu, Marang, Kuala Nerus">TRG01 - Kuala Terengganu, Marang, Kuala Nerus</option>
+            <option value="TRG02 - Besut, Setiu">TRG02 - Besut, Setiu</option>
+            <option value="TRG03 - Hulu Terengganu">TRG03 - Hulu Terengganu</option>
+            <option value="TRG04 - Dungun, Kemaman">TRG04 - Dungun, Kemaman</option>
+        </optgroup>
+        <optgroup label="Wilayah Persekutuan">
+            <option value="WLY01 - Kuala Lumpur, Putrajaya">WLY01 - Kuala Lumpur, Putrajaya</option>
+            <option value="WLY02 - Labuan">WLY02 - Labuan</option>
+        </optgroup>
+        <!-- Add more options as needed -->
+    </select>
+</div>
+<body>
+    <div id="table-container" style="display: none;">
+    
+    <div id="clock-countdown-box">
+  <!-- Kolum kiri: Jam analog + digital -->
+  <div id="clock-box-wrapper">
+    <div id="clock-box">
+      <canvas id="analogClock" width="200" height="200"></canvas>
+    </div>
+   <div id="digitalClock" class="digital-clock"></div>
+  </div>
+  <!-- Countdown -->
+  <div id="countdown-box">
+    <h3>Info Waktu Solat Terkini</h3>
+    <div id="current-prayer"></div>
+    <div id="remaining-time"></div>
+    <div id="next-prayer"></div>
+  </div>
+</div>
+    <table>
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search" placeholder="Cari mengikut tarikh, hari, atau tarikh hijri..." onkeyup="filterTable()">
+        </div>
+        <div class="month-navigation">
+            <button class="nav-btn" onclick="navigateMonth(-1)">◀ Sebelumnya</button>
+            <span id="month-label" class="month-label">Januari 2025</span>
+            <button class="nav-btn" onclick="navigateMonth(1)">Seterusnya ▶</button>
+        </div>
+        <thead>
+                <th colspan="10" id="selected-zone-label" class="selected-zone-label"></th>
+            <tr>
+                <th>Tarikh Miladi</th>
+                <th>Tarikh Hijri</th>
+                <th>Hari</th>
+                <th>Imsak</th>
+                <th>Subuh</th>
+                <th>Syuruk</th>
+                <th>Zohor</th>
+                <th>Asar</th>
+                <th>Maghrib</th>
+                <th>Isyak</th>
+            </tr>
+        </thead>
+        <tbody id="prayer-times-table">
+            <!-- Data will be dynamically populated here -->
+        </tbody>
+    </table>
+<div class="hijri-wrapper">
+
+  <!-- Table -->
+  <div class="hijri-months">
+    <table>
+      <thead>
+        <tr><th colspan="2">RUJUKAN BULAN HIJRI</th></tr>
+        <tr><th>Singkatan</th><th>Bulan Hijri</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Muh</td><td>Muharram</td></tr>
+        <tr><td>Saf</td><td>Safar</td></tr>
+        <tr><td>Raw</td><td>Rabiul Awal</td></tr>
+        <tr><td>Rak</td><td>Rabiul Akhir</td></tr>
+        <tr><td>Jaw</td><td>Jamadil Awal</td></tr>
+        <tr><td>Jak</td><td>Jamadil Akhir</td></tr>
+        <tr><td>Rej</td><td>Rejab</td></tr>
+        <tr><td>Syb</td><td>Syaaban</td></tr>
+        <tr><td>Ram</td><td>Ramadan</td></tr>
+        <tr><td>Syw</td><td>Syawal</td></tr>
+        <tr><td>Zkh</td><td>Zulkaedah</td></tr>
+        <tr><td>Zhj</td><td>Zulhijjah</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="slideshow">
+    <div class="slides fade"><img src="Slideshow/slideshow 1.jpg"></div>
+    <div class="slides fade"><img src="Slideshow/slideshow 2.jpg"></div>
+    <div class="slides fade"><img src="Slideshow/slideshow 3.jpg"></div>
+  </div>
+
+</div>
+    <div class="month-navigation">
+        <button class="nav-btn2" onclick="navigateMonth(-1)">◀ Sebelumnya</button>
+        <span id="month-label2" class="month-label">Januari 2025</span>
+        <button class="nav-btn2" onclick="navigateMonth(1)">Seterusnya ▶</button> 
+    </div>
+    <button class="download-btn"  onclick="downloadPDF()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+    <button class="download-btn"  onclick="downloadCSV()"><i class="fas fa-file-csv"></i> Download CSV</button>
+</div>
+    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</div>
+    <script src="scripts.js"></script>
+</body>
+    
+</div>
+</html>
